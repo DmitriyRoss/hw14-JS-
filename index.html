@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <title>JAVASCRIPT</title>
+</head>
+
+<body>
+    <script>
+        // ЗАДАНИЯ ДЛЯ РАЗМИНКИ!!!!!!)))
+
+        //1) Есть две функции конструктор! Нужно c помощью prototype сделать second родителем first!
+        function A(name) {
+            this.name = name;
+        }
+        function B(lastName) {
+            this.lastName = lastName;
+        }
+        const first = new A('Sergei');
+        const second = new B('Shakhov');
+
+        A.prototype = B
+        
+        //2) Создать класс функция конструктор которого принимает два параметра position, salary, 
+        // также создать одно private поле positions = ['software developer', 'hr manager', 'project manager'], getter(get функция)!
+        // которая смотрит на поле positions, и если в position есть одно из перечисленных то возвращает true иначе false
+        class first {
+            #positions = {positions: ['software developer', 'hr manager', 'project manager']};
+            constructor(obj) {
+                return {   
+                position: obj.position,
+                salary: obj.salary
+            };
+            }
+            
+            get getter() {
+                return positions.includes(this)
+
+            }
+        }
+        let First = new first({position: 'hr manager', salary: '10000$' });
+        
+
+    
+
+        //3) Есть класс App! Добавить две функции одна из них устанавливает product(создает поле product обьект с полем name, price), вторая функция получает price 
+        // и одно статическое свойство yearOfIssue
+        class App {
+            constructor(name, price) {
+                this.name = name;
+                this.price = price;
+            };
+            get Getter() {
+                return this.price, this.yearsOfIssue
+            }
+        }
+       
+        // 4) Пишем свой split и join))!
+        function split(names) {
+                return names.split(',')
+        }
+        let a = split("Vasya, Kolya, Petya, Borya")
+        console.log(a);
+        function join(arr) {
+            return arr.join(';')
+        }
+        join(a)
+        // 5) Ну и на последок перепишем класс в вид самовыз функция которая возвращает функцию-конструктор
+        class NewApp {
+            constructor(object) {
+                this.object = object;
+            }
+            getObject() {
+                return object;
+            }
+        }
+
+        
+        function NewApp(object) {
+            this.object = object
+        }
+        NewApp.prototype.getObject = function() {
+            return this.object
+        }
+
+        
+    </script>
+</body>
+
+</html>
